@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Amdavadi Night Owl | Ahmedabad's Midnight Guide</title>
+    
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         body { background-color: #0f172a; color: #38bdf8; font-family: sans-serif; }
         #map { height: 75vh; border: 2px solid #38bdf8; border-radius: 8px; }
         .leaflet-popup-content { color: #000; font-weight: bold; }
-        input::placeholder { color: #94a3b8; }
+        
+        /* Loading Spinner */
+        #spinner {
+            position: fixed; top: 50%; left: 50%; width: 50px; height: 50px;
+            border: 5px solid #f3f3f3; border-top: 5px solid #38bdf8;
+            border-radius: 50%; animation: spin 1s linear infinite; z-index: 1000;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="p-4 md:p-8">
+    <div id="spinner"></div>
+
     <header class="mb-6">
         <h1 class="text-3xl font-bold text-white mb-4">🦉 Amdavadi Night Owl</h1>
         
@@ -21,6 +35,7 @@
             <button onclick="updateMap('all')" class="bg-blue-900 px-4 py-2 rounded border border-blue-500 hover:bg-blue-800 transition">All</button>
             <button onclick="updateMap('Tea')" class="bg-blue-900 px-4 py-2 rounded border border-blue-500 hover:bg-blue-800 transition">Tea</button>
             <button onclick="updateMap('Food')" class="bg-blue-900 px-4 py-2 rounded border border-blue-500 hover:bg-blue-800 transition">Food</button>
+            <button onclick="locateUser()" class="bg-blue-600 px-4 py-2 rounded border border-blue-400 font-bold hover:bg-blue-500 transition">📍 Find Me</button>
             
             <input type="text" id="search" placeholder="Search spots..." 
                    class="bg-slate-800 border border-blue-500 px-4 py-2 rounded text-white w-full md:w-64"
@@ -38,17 +53,19 @@
         }).addTo(map);
 
         let markers = [];
+        const spinner = document.getElementById('spinner');
 
-        // Load data
         fetch('data/places.json')
             .then(res => res.json())
             .then(data => {
+                spinner.style.display = 'none';
                 data.forEach(p => {
                     const m = L.marker([p.lat, p.lng]).addTo(map)
                         .bindPopup(`<b>${p.name}</b><br>${p.description}`);
                     markers.push({ m, cat: p.category, name: p.name.toLowerCase() });
                 });
-            });
+            })
+            .catch(err => { spinner.style.display = 'none'; });
 
         function updateMap(cat) {
             markers.forEach(item => {
@@ -61,6 +78,16 @@
             markers.forEach(item => {
                 item.name.includes(query) ? item.m.addTo(map) : map.removeLayer(item.m);
             });
+        }
+
+        function locateUser() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    const { latitude, longitude } = pos.coords;
+                    map.setView([latitude, longitude], 15);
+                    L.marker([latitude, longitude]).addTo(map).bindPopup("You are here!").openPopup();
+                });
+            }
         }
     </script>
 </body>
