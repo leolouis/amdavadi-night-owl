@@ -10,7 +10,61 @@ function createSpotMarker(map,place){
 
 
     const marker =
-    L.circleMarker(
+    const icon =
+getCategoryIcon(place.category);
+
+
+
+const color =
+getCategoryColor(place.category);
+
+
+
+const marker =
+L.marker(
+
+[
+place.lat,
+place.lng
+],
+
+{
+
+icon:
+
+L.divIcon({
+
+className:"",
+
+html:
+
+`
+
+<div
+
+class="marker-glow"
+
+style="
+color:${color};
+font-size:32px;
+">
+
+${icon}
+
+</div>
+
+`,
+
+iconSize:[40,40],
+
+iconAnchor:[20,20]
+
+})
+
+}
+
+);
+    
 
         [
             place.lat,
