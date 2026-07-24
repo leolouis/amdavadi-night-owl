@@ -3,134 +3,236 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Amdavadi Night Owl</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Find Ahmedabad's best midnight food trucks, tea kitlis and hangout spots.">
+<title>Amdavadi Night Owl</title>
 
-    <link rel="icon"
-          href="assets/images/favicon.png">
+<meta name="description"
+content="Discover Ahmedabad's midnight food trucks, tea kitlis and hangout spots.">
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Leaflet -->
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
-    <!-- Google Font -->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
 
-    <!-- Confetti -->
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-    <link rel="stylesheet"
-          href="css/style.css">
 
 </head>
 
+
 <body>
 
-    <!-- Loading Screen -->
 
-    <div id="loading-screen">
+<!-- App Container -->
 
-        <h1>🦉</h1>
-        <h2>Amdavadi Night Owl</h2>
+<div class="app">
 
-    </div>
 
-    <!-- Header -->
+    <!-- Top Header -->
 
-    <header>
+    <header class="top-bar">
 
-        <h1>🦉 Amdavadi Night Owl</h1>
+        <div>
 
-        <p>
-            Ahmedabad After Dark
-        </p>
+            <h1>
+                🦉 Amdavadi Night Owl
+            </h1>
+
+            <p>
+                Ahmedabad After Dark
+            </p>
+
+        </div>
+
+
+        <button class="profile-btn">
+
+            🌙
+
+        </button>
+
 
     </header>
 
-    <!-- Alerts -->
 
-    <div id="alerts"></div>
 
     <!-- Search -->
 
-    <section id="search-section">
+    <div class="search-box">
+
+        <span>
+            🔍
+        </span>
 
         <input
-            type="text"
-            id="searchInput"
-            placeholder="Search for Kitlis, Cafes or Food Trucks">
+        type="text"
+        placeholder="Search midnight spots...">
 
-    </section>
 
-    <!-- Filters -->
+    </div>
 
-    <section id="filters">
 
-        <button class="filter active">All</button>
 
-        <button class="filter">Tea</button>
+    <!-- Category Filters -->
 
-        <button class="filter">Food</button>
 
-        <button class="filter">Cafe</button>
+    <div class="categories">
 
-        <button class="filter">Dessert</button>
 
-    </section>
+        <button class="category active">
 
-    <!-- Map -->
+            🌎 All
 
-    <div id="map"></div>
+        </button>
+
+
+        <button class="category">
+
+            🍵 Tea
+
+        </button>
+
+
+        <button class="category">
+
+            🍔 Food
+
+        </button>
+
+
+        <button class="category">
+
+            ☕ Cafe
+
+        </button>
+
+
+        <button class="category">
+
+            🍨 Dessert
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- Map Area -->
+
+    <main id="map">
+
+
+        <div class="map-placeholder">
+
+
+            <div class="owl-animation">
+
+                🦉
+
+            </div>
+
+
+            <h2>
+
+                Night Map Loading...
+
+            </h2>
+
+
+            <p>
+
+                Finding Ahmedabad's hidden gems
+
+            </p>
+
+
+        </div>
+
+
+    </main>
+
+
 
     <!-- Floating Buttons -->
 
-    <div id="floating-buttons">
 
-        <button id="locateBtn">
+    <div class="floating-actions">
+
+
+        <button>
+
             📍
+
         </button>
 
-        <button id="rouletteBtn">
+
+        <button>
+
             🎲
+
         </button>
 
-        <button id="addSpotBtn">
+
+        <button>
+
             ➕
+
         </button>
 
-        <button id="inviteBtn">
-            💬
+
+        <button>
+
+            🚨
+
         </button>
+
 
     </div>
 
-    <!-- Bottom Sheet -->
 
-    <div id="bottom-sheet">
 
-    </div>
 
-    <script src="config.js"></script>
+    <!-- Bottom Card -->
 
-    <script src="js/app.js" type="module"></script>
+
+    <section class="bottom-card">
+
+
+        <div class="handle"></div>
+
+
+        <h2>
+
+            Tonight's Discovery
+
+        </h2>
+
+
+        <p>
+
+            Explore food, tea and late-night hangouts around Ahmedabad.
+
+        </p>
+
+
+    </section>
+
+
+
+</div>
+
 
 </body>
 
 </html>
+
