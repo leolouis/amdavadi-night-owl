@@ -1,161 +1,71 @@
-let map;
-let markers = [];
+let nightMap;
 
-/**
- * Initialize Leaflet map
- */
-export async function initMap() {
 
-    map = L.map("map", {
-        zoomControl: false
-    }).setView(
+function initializeMap(){
+
+
+    nightMap = L.map("map",{
+
+        zoomControl:false
+
+    })
+    .setView(
         [
-            CONFIG.defaultLocation.lat,
-            CONFIG.defaultLocation.lng
+            23.0225,
+            72.5714
         ],
-        CONFIG.defaultLocation.zoom
+        13
     );
 
-    L.control.zoom({
-        position: "bottomleft"
-    }).addTo(map);
+
 
     L.tileLayer(
+
         "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-        {
-            attribution:
-                "&copy; OpenStreetMap contributors &copy; CARTO"
-        }
-    ).addTo(map);
 
-    await loadPlaces();
-}
-
-/**
- * Load places.json
- */
-
-async function loadPlaces() {
-
-    try {
-
-        const response = await fetch(CONFIG.placesFile);
-
-        const places = await response.json();
-
-        places.forEach(createMarker);
-
-    }
-
-    catch (error) {
-
-        console.error("Unable to load places.", error);
-
-    }
-
-}
-
-/**
- * Marker creation
- */
-
-function createMarker(place) {
-
-    const marker = L.circleMarker(
-        [
-            place.lat,
-            place.lng
-        ],
         {
 
-            radius: 9,
-
-            color: markerColor(place.category),
-
-            fillColor: markerColor(place.category),
-
-            fillOpacity: 1,
-
-            weight: 2
+        attribution:
+        "&copy; OpenStreetMap & CARTO"
 
         }
-    );
 
-    marker.bindPopup(generatePopup(place));
+    )
 
-    marker.addTo(map);
+    .addTo(nightMap);
 
-    markers.push(marker);
 
-}
 
-/**
- * Marker colors
- */
+    loadPlaces();
 
-function markerColor(category) {
-
-    switch (category.toLowerCase()) {
-
-        case "tea":
-
-            return "#00D9FF";
-
-        case "food":
-
-            return "#FFB000";
-
-        case "cafe":
-
-            return "#8B5CF6";
-
-        case "dessert":
-
-            return "#EC4899";
-
-        default:
-
-            return "#FFFFFF";
-
-    }
 
 }
 
-/**
- * Popup HTML
- */
 
-function generatePopup(place) {
 
-    return `
+async function loadPlaces(){
 
-    <div class="popup">
 
-        <h2>${place.name}</h2>
+    const response =
+    await fetch("places.json");
 
-        <p>${place.category}</p>
 
-        <p>⭐ ${place.rating}</p>
+    const places =
+    await response.json();
 
-        <p>${place.opens} → ${place.closes}</p>
 
-        <p>${place.safe ? "🟢 Safe Area" : "🟠 Use Caution"}</p>
 
-        <div class="popup-buttons">
+    places.forEach(place=>{
 
-            <a target="_blank"
-               href="https://www.google.com/maps?q=${place.lat},${place.lng}">
-               Navigate
-            </a>
 
-            <button onclick="shareSpot('${place.name}',${place.lat},${place.lng})">
-                Share
-            </button>
+        createSpotMarker(
+            nightMap,
+            place
+        );
 
-        </div>
 
-    </div>
+    });
 
-    `;
 
 }
+
