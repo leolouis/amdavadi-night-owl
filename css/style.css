@@ -429,3 +429,55 @@ margin-top:8px;
 
 }
 
+.spot-popup{
+
+color:#111827;
+
+min-width:220px;
+
+}
+
+
+.spot-popup h2{
+
+font-size:18px;
+
+color:#0891b2;
+
+margin-bottom:8px;
+
+}
+
+
+.spot-popup span{
+
+background:#00e5ff;
+
+padding:4px 8px;
+
+border-radius:10px;
+
+font-size:12px;
+
+}
+
+
+.spot-popup a{
+
+display:block;
+
+margin-top:12px;
+
+background:#0891b2;
+
+color:white;
+
+padding:10px;
+
+border-radius:10px;
+
+text-align:center;
+
+text-decoration:none;
+
+}
