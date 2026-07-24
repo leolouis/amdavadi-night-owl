@@ -1,4 +1,6 @@
-let nightMap;
+import { locateUser } from "./geolocation.js";
+export let nightMap;
+
 
 
 function initializeMap(){
