@@ -254,3 +254,38 @@ function getCategoryColor(category){
 
 
 }
+function getCategoryIcon(category){
+
+
+switch(category.toLowerCase()){
+
+
+case "tea":
+
+return "🍵";
+
+
+case "food":
+
+return "🍔";
+
+
+case "cafe":
+
+return "☕";
+
+
+case "dessert":
+
+return "🍨";
+
+
+default:
+
+return "📍";
+
+
+}
+
+
+}
