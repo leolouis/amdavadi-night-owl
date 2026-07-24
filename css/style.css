@@ -481,3 +481,29 @@ text-align:center;
 text-decoration:none;
 
 }
+.spot-popup h3{
+
+margin:12px 0;
+
+font-size:15px;
+
+}
+
+
+.spot-popup span{
+
+display:inline-block;
+
+background:#00e5ff;
+
+color:#001018;
+
+padding:5px 10px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
