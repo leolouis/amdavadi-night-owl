@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Tea Post CG Road",
+    "category": "Tea",
+    "lat": 23.0395,
+    "lng": 72.5616,
+    "opens": "18:00",
+    "closes": "03:00",
+    "rating": 4.7,
+    "safe": true
+  },
+  {
+    "id": 2,
+    "name": "Manek Chowk",
+    "category": "Food",
+    "lat": 23.0235,
+    "lng": 72.5873,
+    "opens": "20:00",
+    "closes": "02:30",
+    "rating": 4.9,
+    "safe": true
+  }
+]
