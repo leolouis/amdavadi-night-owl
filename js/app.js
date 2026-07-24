@@ -1,9 +1,9 @@
 import { initMap } from "./map.js";
 
-window.onload = () => {
+window.onload = async () => {
 
-    initMap();
+    await initMap();
 
     document.getElementById("loading-screen").style.display = "none";
 
-};
+}
