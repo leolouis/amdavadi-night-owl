@@ -227,33 +227,21 @@ href="https://maps.google.com/?q=${place.lat},${place.lng}">
 
 function getCategoryColor(category){
 
+    const colors = {
 
-    switch(category){
+        tea:"#00FFFF",       // Cyan glow
+        food:"#FF8800",      // Orange
+        cafe:"#B026FF",      // Neon purple
+        dessert:"#FF1493",   // Pink
+        default:"#FFFFFF"
 
-
-        case "tea":
-            return "#00e5ff";
-
-
-        case "food":
-            return "#ffb703";
-
-
-        case "cafe":
-            return "#9b5cff";
+    };
 
 
-        case "dessert":
-            return "#ff4ecd";
-
-
-        default:
-            return "#ffffff";
-
-    }
-
+    return colors[category.toLowerCase()] || colors.default;
 
 }
+
 function getCategoryIcon(category){
 
 
