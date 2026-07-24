@@ -362,45 +362,6 @@ Once the page loads you can:
 
 ---
 
-# 🌍 Deployment
-
-Deploying takes less than a minute.
-
-## GitHub Pages
-
-1. Push your repository to GitHub.
-2. Open:
-
-```
-Settings → Pages
-```
-
-3. Under **Source**, choose:
-
-```
-Deploy from a branch
-```
-
-4. Select:
-
-```
-main
-```
-
-5. Save.
-
-GitHub will automatically publish your website.
-
-Your application will become available at:
-
-```
-https://<username>.github.io/amdavadi-night-owl/
-```
-
-Every push to the `main` branch automatically updates the live website.
-
----
-
 # 📖 Usage Guide
 
 ## 📍 Locate Me
