@@ -39,7 +39,86 @@ function createSpotMarker(map,place){
 
 
 
-    marker.bindPopup(`
+    const openStatus =
+getOpenStatus(
+    place.open,
+    place.close
+);
+
+
+
+marker.bindPopup(`
+
+<div class="spot-popup">
+
+
+<h2>
+${place.name}
+</h2>
+
+
+
+<span>
+
+${place.category}
+
+</span>
+
+
+
+<p>
+
+${place.description}
+
+</p>
+
+
+
+<h3 style="color:${openStatus.color}">
+
+${openStatus.icon}
+${openStatus.text}
+
+</h3>
+
+
+
+<p>
+
+⭐ ${place.rating}
+
+</p>
+
+
+
+<p>
+
+${
+place.safe
+?
+"🛡️ Community Safe"
+:
+"⚠️ Stay Alert"
+}
+
+</p>
+
+
+
+<a
+target="_blank"
+href="https://maps.google.com/?q=${place.lat},${place.lng}">
+
+🧭 Navigate
+
+</a>
+
+
+
+</div>
+
+`);
+
 
         <div class="spot-popup">
 
