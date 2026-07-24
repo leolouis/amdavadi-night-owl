@@ -1,3 +1,5 @@
+import { getOpenStatus } from "./utils.js";
+
 function createSpotMarker(map,place){
 
 
