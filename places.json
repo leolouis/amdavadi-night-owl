@@ -1,24 +1,43 @@
 [
   {
-    "id": 1,
-    "name": "Tea Post CG Road",
-    "category": "Tea",
-    "lat": 23.0395,
-    "lng": 72.5616,
-    "opens": "18:00",
-    "closes": "03:00",
-    "rating": 4.7,
-    "safe": true
+    "id":1,
+    "name":"Manek Chowk",
+    "category":"food",
+    "description":"Ahmedabad's famous late-night food market.",
+    "lat":23.0236,
+    "lng":72.5871,
+    "rating":4.8,
+    "open":"20:00",
+    "close":"03:00",
+    "safe":true
   },
+
   {
-    "id": 2,
-    "name": "Manek Chowk",
-    "category": "Food",
-    "lat": 23.0235,
-    "lng": 72.5873,
-    "opens": "20:00",
-    "closes": "02:30",
-    "rating": 4.9,
-    "safe": true
+    "id":2,
+    "name":"Law Garden Night Market",
+    "category":"food",
+    "description":"Street food and shopping destination.",
+    "lat":23.0258,
+    "lng":72.5590,
+    "rating":4.6,
+    "open":"19:00",
+    "close":"01:00",
+    "safe":true
+  },
+
+
+  {
+    "id":3,
+    "name":"Tea Post CG Road",
+    "category":"tea",
+    "description":"Popular late evening tea stop.",
+    "lat":23.0395,
+    "lng":72.5616,
+    "rating":4.7,
+    "open":"18:00",
+    "close":"03:00",
+    "safe":true
   }
+
 ]
+
