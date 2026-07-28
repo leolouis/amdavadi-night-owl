@@ -1,11 +1,13 @@
 # 🦉 Amdavadi Night Owl
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/leolouis/amdavadi-night-owl?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/leolouis/amdavadi-night-owl?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/leolouis/amdavadi-night-owl?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/leolouis/amdavadi-night-owl?style=for-the-badge&logo=github&color=yellow" />
+  <img src="https://img.shields.io/github/forks/leolouis/amdavadi-night-owl?style=for-the-badge&logo=github" />
+  <img src="https://img.shields.io/github/issues/leolouis/amdavadi-night-owl?style=for-the-badge&logo=github" />
   <img src="https://img.shields.io/github/license/leolouis/amdavadi-night-owl?style=for-the-badge" />
   <img src="https://img.shields.io/github/last-commit/leolouis/amdavadi-night-owl?style=for-the-badge" />
+  <img src="https://img.shields.io/github/languages/top/leolouis/amdavadi-night-owl?style=for-the-badge&color=blue" />
+  <img src="https://img.shields.io/github/repo-size/leolouis/amdavadi-night-owl?style=for-the-badge" />
 </p>
 
 <p align="center">
