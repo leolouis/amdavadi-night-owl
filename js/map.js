@@ -84,13 +84,7 @@ async function loadPlaces() {
 
 
 
-        places.forEach(place => {
-
-
-            createSpotMarker(
-                nightMap,
-                place
-            );
+        window.allPlaces = places;
 
 
 
