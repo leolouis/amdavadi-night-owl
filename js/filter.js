@@ -1,100 +1,76 @@
 let allMarkers = [];
 
 
-export function initFilters(map, places) {
+export function registerMarkers(markers) {
+
+    allMarkers = markers;
+
+}
+
+
+
+export function initFilters(map) {
+
 
     const buttons =
         document.querySelectorAll(".category");
 
 
-    // Create markers reference
-    allMarkers = places.map(place => {
-
-        const marker = L.marker([
-            place.lat,
-            place.lng
-        ]);
-
-
-        marker.bindPopup(`
-            <div class="spot-popup">
-                <h2>${place.name}</h2>
-
-                <p>
-                ${place.description}
-                </p>
-
-                ⭐ ${place.rating}
-
-                <br>
-
-                🕒 ${place.open} - ${place.close}
-
-            </div>
-        `);
-
-
-        marker.addTo(map);
-
-        return {
-            marker,
-            category: place.category
-        };
-
-    });
-
-
-
     buttons.forEach(button => {
 
 
-        button.addEventListener(
-            "click",
-            () => {
+        button.addEventListener("click", () => {
 
 
-                const selected =
-                    button.dataset.category;
-
-
-
-                // Active button style
-
-                buttons.forEach(btn =>
-                    btn.classList.remove("active")
-                );
-
-
-                button.classList.add("active");
+            const selected =
+                button.dataset.category;
 
 
 
-                allMarkers.forEach(item => {
+            buttons.forEach(btn =>
+                btn.classList.remove("active")
+            );
 
 
-                    if(
-                        selected === "all" ||
-                        item.category === selected
-                    ){
+            button.classList.add("active");
+
+
+
+            allMarkers.forEach(item => {
+
+
+                if (
+                    selected === "all" ||
+                    item.category === selected
+                ) {
+
+
+                    if (!map.hasLayer(item.marker)) {
 
                         item.marker.addTo(map);
 
                     }
 
-                    else {
 
-                        map.removeLayer(
-                            item.marker
-                        );
+                }
+
+                else {
+
+
+                    if (map.hasLayer(item.marker)) {
+
+                        map.removeLayer(item.marker);
 
                     }
 
 
-                });
+                }
 
 
-            }
-        );
+            });
+
+
+        });
 
 
     });
