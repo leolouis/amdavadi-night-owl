@@ -1,76 +1,66 @@
 let allMarkers = [];
 
 
-export function registerMarkers(markers) {
+export function initFilters(map, markers) {
 
     allMarkers = markers;
 
-}
-
-
-
-export function initFilters(map) {
-
 
     const buttons =
-        document.querySelectorAll(".category");
+    document.querySelectorAll(".category");
 
 
     buttons.forEach(button => {
 
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
 
-            const selected =
+                const selected =
                 button.dataset.category;
 
 
 
-            buttons.forEach(btn =>
-                btn.classList.remove("active")
-            );
+                buttons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
 
 
-            button.classList.add("active");
+                button.classList.add("active");
 
 
 
-            allMarkers.forEach(item => {
+                allMarkers.forEach(item => {
 
 
-                if (
-                    selected === "all" ||
-                    item.category === selected
-                ) {
+                    if(
+                        selected === "all" ||
+                        item.category === selected
+                    ){
+
+                        if(!map.hasLayer(item.marker)){
+                            item.marker.addTo(map);
+                        }
+
+                    }
+
+                    else {
 
 
-                    if (!map.hasLayer(item.marker)) {
-
-                        item.marker.addTo(map);
+                        if(map.hasLayer(item.marker)){
+                            map.removeLayer(item.marker);
+                        }
 
                     }
 
 
-                }
-
-                else {
+                });
 
 
-                    if (map.hasLayer(item.marker)) {
-
-                        map.removeLayer(item.marker);
-
-                    }
-
-
-                }
-
-
-            });
-
-
-        });
+            }
+        );
 
 
     });
