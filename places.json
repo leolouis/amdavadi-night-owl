@@ -238,8 +238,8 @@
     "open":"18:00",
     "close":"02:00",
     "safe":true
-  }
-    {
+  },
+  {
     "id":21,
     "name":"Iscon Circle",
     "category":"food",
@@ -478,7 +478,7 @@
     "open":"18:00",
     "close":"02:00",
     "safe":true
-  }
+  },
   {
     "id":41,
     "name":"Mithakhali Six Roads",
@@ -718,7 +718,7 @@
     "open":"17:00",
     "close":"03:00",
     "safe":true
-  }
+  },
   {
     "id":61,
     "name":"Mansi Circle",
@@ -958,7 +958,7 @@
     "open":"06:00",
     "close":"22:00",
     "safe":true
-  }
+  },
   {
     "id":81,
     "name":"CG Road Late Night Cafes",
