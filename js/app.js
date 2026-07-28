@@ -4,39 +4,111 @@ import { checkLiveAlerts } from "./alerts.js";
 import { spinRoulette } from "./roulette.js";
 import { initFilters } from "./filter.js";
 
-window.onload = async () => {
+
+window.addEventListener("load", async () => {
+
 
     await initMap();
 
-    // Fetch places again for filter/roulette access
-    const response = await fetch("places.json");
+
+    const response = await fetch("./places.json");
     const places = await response.json();
 
-    // Wire up floating action buttons (in DOM order: 📍 🎲 ➕ 🚨)
-    const [locateBtn, rouletteBtn, addSpotBtn, alertBtn] =
-        document.querySelectorAll(".floating-actions button");
 
-    locateBtn.addEventListener("click", () => locateUser(nightMap));
 
-    rouletteBtn.addEventListener("click", () => spinRoulette(nightMap, places));
+    const locateBtn = document.querySelector(
+        ".floating-actions button:nth-child(1)"
+    );
 
-    addSpotBtn.addEventListener("click", () => {
-        window.open(
-            `https://github.com/leolouis/amdavadi-night-owl/issues/new?template=new-spot.md`,
-            "_blank"
-        );
-    });
+    const rouletteBtn = document.querySelector(
+        ".floating-actions button:nth-child(2)"
+    );
 
-    alertBtn.addEventListener("click", () => {
-        window.open(
-            `https://github.com/leolouis/amdavadi-night-owl/issues/new?title=🚨+Alert:+&body=Describe+the+alert+here`,
-            "_blank"
-        );
-    });
+    const addSpotBtn = document.querySelector(
+        ".floating-actions button:nth-child(3)"
+    );
 
-    // Init search + category filters
-    initFilters(nightMap, places);
+    const alertBtn = document.querySelector(
+        ".floating-actions button:nth-child(4)"
+    );
 
-    // Check for live alerts from GitHub Issues
-    checkLiveAlerts("leolouis/amdavadi-night-owl");
-};
+
+
+    console.log("Floating buttons loaded");
+
+
+
+    // 📍 Locate user
+
+    locateBtn.addEventListener(
+        "click",
+        () => {
+
+            locateUser(nightMap);
+
+        }
+    );
+
+
+
+    // 🎲 Roulette
+
+    rouletteBtn.addEventListener(
+        "click",
+        () => {
+
+            spinRoulette(
+                nightMap,
+                places
+            );
+
+        }
+    );
+
+
+
+    // ➕
+
+    addSpotBtn.addEventListener(
+        "click",
+        () => {
+
+            window.open(
+                "https://github.com/leolouis/amdavadi-night-owl/issues/new?template=new-spot.md",
+                "_blank"
+            );
+
+        }
+    );
+
+
+
+    // 🚨
+
+    alertBtn.addEventListener(
+        "click",
+        () => {
+
+            window.open(
+                "https://github.com/leolouis/amdavadi-night-owl/issues/new?title=Alert",
+                "_blank"
+            );
+
+        }
+    );
+
+
+
+    initFilters(
+        nightMap,
+        places
+    );
+
+
+
+    checkLiveAlerts(
+        "leolouis/amdavadi-night-owl"
+    );
+
+
+});
