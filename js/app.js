@@ -8,7 +8,7 @@ import { initFilters } from "./filter.js";
 window.addEventListener("load", async () => {
 
 
-    await initMap();
+    const markers = await initMap();
 
 
     const response = await fetch("./places.json");
@@ -99,11 +99,8 @@ window.addEventListener("load", async () => {
 
 
 
-    initFilters(
-        nightMap,
-        places
-    );
-
+    initFilters(nightMap, markers);
+    
 
 
     checkLiveAlerts(
