@@ -1,44 +1,103 @@
-import { createSpotMarker } from "./markers.js";
+let allMarkers = [];
 
-let allPlaces = [];
-let currentCategory = "all";
-let searchQuery = "";
-let activeMarkers = [];
 
-export async function initFilters(map, placesData) {
-    allPlaces = placesData;
+export function initFilters(map, places) {
 
-    const searchInput = document.getElementById("search-input");
-    const categoryButtons = document.querySelectorAll(".category");
+    const buttons =
+        document.querySelectorAll(".category");
 
-    searchInput.addEventListener("input", e => {
-        searchQuery = e.target.value.toLowerCase();
-        renderFilteredPlaces(map);
+
+    // Create markers reference
+    allMarkers = places.map(place => {
+
+        const marker = L.marker([
+            place.lat,
+            place.lng
+        ]);
+
+
+        marker.bindPopup(`
+            <div class="spot-popup">
+                <h2>${place.name}</h2>
+
+                <p>
+                ${place.description}
+                </p>
+
+                ⭐ ${place.rating}
+
+                <br>
+
+                🕒 ${place.open} - ${place.close}
+
+            </div>
+        `);
+
+
+        marker.addTo(map);
+
+        return {
+            marker,
+            category: place.category
+        };
+
     });
 
-    categoryButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            categoryButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            currentCategory = btn.dataset.category || "all";
-            renderFilteredPlaces(map);
-        });
-    });
-}
 
-function renderFilteredPlaces(map) {
-    // Remove existing markers
-    activeMarkers.forEach(m => map.removeLayer(m));
-    activeMarkers = [];
 
-    const filtered = allPlaces.filter(place => {
-        const matchesCategory = currentCategory === "all" || place.category.toLowerCase() === currentCategory;
-        const matchesSearch = place.name.toLowerCase().includes(searchQuery) || place.description.toLowerCase().includes(searchQuery);
-        return matchesCategory && matchesSearch;
+    buttons.forEach(button => {
+
+
+        button.addEventListener(
+            "click",
+            () => {
+
+
+                const selected =
+                    button.dataset.category;
+
+
+
+                // Active button style
+
+                buttons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+
+                button.classList.add("active");
+
+
+
+                allMarkers.forEach(item => {
+
+
+                    if(
+                        selected === "all" ||
+                        item.category === selected
+                    ){
+
+                        item.marker.addTo(map);
+
+                    }
+
+                    else {
+
+                        map.removeLayer(
+                            item.marker
+                        );
+
+                    }
+
+
+                });
+
+
+            }
+        );
+
+
     });
 
-    filtered.forEach(place => {
-        const marker = createSpotMarker(map, place);
-        activeMarkers.push(marker);
-    });
+
 }
