@@ -515,15 +515,26 @@ body {
 
 }
 
-/* Leaflet map fix */
+/* ================================
+   FINAL MAP + FLOATING BUTTON
+================================ */
+
+
+/* MAP */
 
 #map {
 
     width:100%;
+
     height:calc(100vh - 230px);
+
     min-height:500px;
+
     position:relative;
-    z-index:1;
+
+    z-index:0;
+
+    background:#020617;
 
 }
 
@@ -532,16 +543,184 @@ body {
 .leaflet-container {
 
     width:100%;
+
     height:100%;
+
     background:#111;
 
 }
 
 
 
+.leaflet-control-container {
+
+    z-index:5;
+
+}
+
+
+
+/* ================================
+   FLOATING ACTION BUTTONS
+================================ */
+
+
+.floating-actions {
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:160px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:99999;
+
+}
+
+
+
+.floating-actions button {
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+    color:white;
+
+    cursor:pointer;
+
+    pointer-events:auto;
+
+
+    background:
+
+    rgba(0,229,255,0.15);
+
+
+    border:
+
+    1px solid rgba(0,229,255,0.5);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    box-shadow:
+
+    0 0 20px rgba(0,229,255,0.35);
+
+
+    transition:
+
+    transform .2s ease,
+
+    background .2s ease;
+
+}
+
+
+
+.floating-actions button:hover {
+
+    transform:scale(1.12);
+
+    background:
+
+    rgba(0,229,255,0.35);
+
+}
+
+
+
+/* ================================
+   BOTTOM CARD
+================================ */
+
+
+.bottom-card {
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    max-height:35vh;
+
+    overflow-y:auto;
+
+
+    background:
+
+    rgba(15,23,42,.9);
+
+
+    border-radius:
+
+    30px 30px 0 0;
+
+
+    padding:20px;
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    z-index:100;
+
+}
+
+
+
+.handle {
+
+    width:50px;
+
+    height:5px;
+
+    background:#64748b;
+
+    border-radius:10px;
+
+    margin:0 auto 15px;
+
+}
+
+
+
+/* ================================
+   POPUPS
+================================ */
+
+
 .leaflet-popup-content-wrapper {
 
     background:#151515;
+
     color:white;
 
 }
@@ -554,15 +733,41 @@ body {
 
 }
 
-.floating-actions {
-    position: fixed;
-    right: 20px;
-    bottom: 120px;
-    z-index: 9999;
-}
 
 
-.floating-actions button {
-    pointer-events: auto;
-    cursor: pointer;
+/* ================================
+   MOBILE
+================================ */
+
+
+@media(max-width:600px){
+
+
+    #map {
+
+        height:55vh;
+
+    }
+
+
+    .floating-actions {
+
+        bottom:170px;
+
+        right:15px;
+
+    }
+
+
+    .floating-actions button {
+
+        width:55px;
+
+        height:55px;
+
+        font-size:22px;
+
+    }
+
+
 }
