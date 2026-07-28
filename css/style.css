@@ -553,3 +553,16 @@ body {
     background:#151515;
 
 }
+
+.floating-actions {
+    position: fixed;
+    right: 20px;
+    bottom: 120px;
+    z-index: 9999;
+}
+
+
+.floating-actions button {
+    pointer-events: auto;
+    cursor: pointer;
+}
