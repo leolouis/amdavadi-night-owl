@@ -6,15 +6,14 @@
   <img src="https://img.shields.io/github/issues/leolouis/amdavadi-night-owl?style=for-the-badge" />
   <img src="https://img.shields.io/github/license/leolouis/amdavadi-night-owl?style=for-the-badge" />
   <img src="https://img.shields.io/github/last-commit/leolouis/amdavadi-night-owl?style=for-the-badge" />
-  <img src="https://img.shields.io/github/languages/top/leolouis/amdavadi-night-owl?style=for-the-badge" />
 </p>
 
 <p align="center">
-<strong>An interactive, crowdsourced, and completely serverless map built for Ahmedabad's midnight explorers.</strong>
+<strong>An interactive community-powered night map for discovering Ahmedabad after dark.</strong>
 </p>
 
 <p align="center">
-Discover active food trucks, tea kitlis, cafés, and late-night hangout spots with community-powered updates, live alerts, safety insights, and zero backend infrastructure.
+Find late-night food spots, tea stalls, cafés, desserts, and hangout locations with an interactive map, GPS support, category filters, random discovery, and community updates.
 </p>
 
 <p align="center">
@@ -24,52 +23,60 @@ https://leolouis.github.io/amdavadi-night-owl/
 
 ---
 
-# 🌃 Why Amdavadi Night Owl?
+# 🌃 About The Project
 
-Ahmedabad comes alive after sunset.
+Ahmedabad has a unique nightlife culture.
 
-From bustling tea kitlis and food trucks to hidden midnight cafés, the city has a vibrant late-night culture. Unfortunately, discovering which places are actually open can be frustrating. Search engines are often outdated, and maps rarely reflect the real-time status of these dynamic spots.
+From famous food streets and chai corners to hidden cafés and late-night gathering places, the city has countless experiences after sunset.
 
-**Amdavadi Night Owl** solves this by creating a community-driven map where anyone can help keep information accurate—without relying on expensive servers or databases.
+The challenge is finding places that are:
 
-Built entirely with static files, GitHub Pages, and the GitHub REST API, the project demonstrates how modern web applications can be fast, scalable, collaborative, and completely free to host.
+* Actually open
+* Worth visiting
+* Easy to discover
+* Updated by local knowledge
+
+**Amdavadi Night Owl** is a community-driven interactive map that helps people explore Ahmedabad after dark.
+
+The project uses a simple and transparent architecture:
+
+* No traditional backend
+* No user database
+* No login system
+* Location data stored in JSON
+* Community updates through GitHub Issues
+
+The goal is to build a lightweight, open map for Ahmedabad's night explorers.
+
+---
+
+# 🚦 Current Status
+
+The project is actively under development.
+
+Current features:
+
+✅ Interactive Ahmedabad night map
+✅ 100+ curated locations
+✅ Food, Tea, Cafe, Dessert categories
+✅ GPS location support
+✅ Location markers with details
+✅ Midnight Roulette discovery
+✅ Community spot submissions
+✅ GitHub-based alerts system
 
 ---
 
 # 📸 Preview
 
-> Replace these placeholders with screenshots after deployment.
-
-## 🖥 Desktop
+Screenshots will be added here:
 
 ```
-/assets/screenshots/desktop.png
+assets/screenshots/
+├── desktop.png
+├── mobile.png
+└── demo.gif
 ```
-
----
-
-## 📱 Mobile
-
-```
-/assets/screenshots/mobile.png
-```
-
----
-
-## 🎥 Demo GIF
-
-```
-/assets/screenshots/demo.gif
-```
-
-Suggested demo sequence:
-
-- Open website
-- Locate Me
-- Midnight Roulette
-- Live Alerts
-- Add Spot
-- Invite the Gang
 
 ---
 
@@ -77,158 +84,130 @@ Suggested demo sequence:
 
 ## 🌙 Interactive Night Map
 
-Navigate Ahmedabad using a beautiful cyberpunk-inspired dark map powered by Leaflet.js.
+Explore Ahmedabad through a responsive Leaflet-powered map.
 
-- High-contrast night theme
-- Responsive design
-- Smooth zooming
-- Interactive markers
-- Mobile optimized
+Features:
 
----
-
-## 📍 Real-Time GPS Location
-
-Find your exact location and instantly discover nearby late-night food spots.
-
-✔ One-click geolocation
-
-✔ Accurate positioning
-
-✔ Distance awareness
-
-✔ Mobile-friendly
+* Interactive markers
+* Smooth navigation
+* Mobile-friendly design
+* Location details
+* Google Maps navigation links
 
 ---
 
-## 🚨 Live Community Alerts
+## 📍 Locate Me
 
-Stay informed with community-submitted alerts fetched directly from GitHub Issues.
+Find your current position instantly.
 
-Examples include:
+Features:
 
-- Road closures
-- Police checkpoints
-- Temporary closures
-- Construction
-- Crowds
-- Traffic updates
+* Browser-based GPS detection
+* User location marker
+* Accuracy indicator
+* Map movement to current position
 
-No backend required.
+Your location is processed locally in your browser and is not stored.
+
+---
+
+## 🍔 Category Filters
+
+Quickly explore places by category:
+
+* 🍵 Tea
+* 🍔 Food
+* ☕ Cafe
+* 🍨 Dessert
+
+Find the type of night experience you want.
 
 ---
 
 ## 🎲 Midnight Roulette
 
-Can't decide where to eat?
+Can't decide where to go?
 
-Press one button and let the wheel randomly choose your next destination.
+The roulette feature randomly selects a destination.
 
-Features include:
+Features:
 
-- Animated selection
-- Automatic map pan
-- Randomized recommendations
-- Confetti celebration
-
----
-
-## ➕ Serverless "Add Spot"
-
-Users can contribute without creating accounts.
-
-The app automatically generates a pre-filled GitHub Issue containing structured JSON.
-
-Maintainers simply review the submission and paste it into `places.json`.
-
-No databases.
-
-No authentication.
-
-No servers.
+* Random location selection
+* Animated map movement
+* Celebration animation
 
 ---
 
-## 💬 Invite the Gang
+## ➕ Add A Spot
 
-Generate WhatsApp-ready invitation messages containing:
+Help improve the map by submitting new locations.
 
-- Spot name
-- Google Maps link
-- Friendly invitation text
+The project uses GitHub Issues instead of a database.
 
-Perfect for planning midnight outings with friends.
+Contribution flow:
+
+```
+User submits location
+        ↓
+GitHub Issue created
+        ↓
+Maintainer reviews
+        ↓
+Location added to places.json
+        ↓
+Everyone receives the update
+```
 
 ---
 
-# 🚀 Feature Highlights
+## 🚨 Community Alerts
 
-| Feature | Description |
-|----------|-------------|
-| 🌙 Dark Theme | Designed specifically for night-time navigation |
-| 📍 GPS Support | Find yourself instantly |
-| 🗺 Interactive Map | Powered by Leaflet.js |
-| 🚨 Live Alerts | GitHub Issues become community warnings |
-| 🎲 Roulette | Random late-night destination picker |
-| ➕ Add Spot | Serverless crowdsourced submissions |
-| 💬 Share Invite | WhatsApp-friendly invitations |
-| ⚡ Fast | Static website hosted on GitHub Pages |
-| 💰 Free | No servers or databases |
-| 📱 Responsive | Works beautifully on mobile |
+Important updates can be submitted through GitHub Issues.
+
+Examples:
+
+* Temporary closures
+* Road conditions
+* Events
+* Local updates
 
 ---
 
 # 🛠 Technology Stack
 
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Application structure |
-| CSS3 | Styling |
-| JavaScript (ES6) | Application logic |
-| Tailwind CSS | Utility-first responsive UI |
-| Leaflet.js | Interactive mapping |
-| CARTO Dark Matter | Beautiful night-themed tiles |
-| GitHub REST API | Community alerts and submissions |
-| GitHub Pages | Free hosting |
-| Canvas Confetti | Celebration animations |
-| Google Fonts (Space Grotesk) | Modern typography |
-
----
-
-# 🤔 Why These Technologies?
-
-| Technology | Why We Chose It |
-|------------|----------------|
-| Leaflet | Lightweight, open-source, and highly customizable |
-| Tailwind CSS | Rapid UI development with responsive utilities |
-| GitHub Pages | Free, reliable static hosting |
-| GitHub REST API | Eliminates the need for a backend server |
-| JSON | Simple, human-readable data storage |
-| Vanilla JavaScript | Fast performance with zero framework overhead |
+| Technology             | Purpose               |
+| ---------------------- | --------------------- |
+| HTML5                  | Application structure |
+| CSS3                   | Responsive styling    |
+| JavaScript ES6 Modules | Application logic     |
+| Leaflet.js             | Interactive maps      |
+| OpenStreetMap          | Map tiles             |
+| GitHub Pages           | Hosting               |
+| GitHub Issues API      | Community updates     |
+| JSON                   | Location database     |
+| Canvas Confetti        | Animations            |
+| Google Fonts           | Typography            |
 
 ---
 
 # 🏗 Architecture
 
 ```
-                   User
-                     │
-                     ▼
-            GitHub Pages Website
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-          ▼                     ▼
-     places.json         GitHub REST API
-          │                     │
-          ▼                     ▼
-    Map Rendering        Live Alerts
-                                │
-                                ▼
-                      GitHub Issues
-                                ▲
-                                │
-                         User Submissions
+                    User
+                      |
+                      ▼
+              GitHub Pages App
+                      |
+          ┌───────────┴───────────┐
+          │                       │
+          ▼                       ▼
+     places.json          GitHub Issues
+          │                       │
+          ▼                       ▼
+   Map + Markers          Alerts/Submissions
+          |
+          ▼
+      Leaflet Map
 ```
 
 ---
@@ -239,9 +218,21 @@ Perfect for planning midnight outings with friends.
 amdavadi-night-owl/
 │
 ├── index.html
-├── style.css
-├── script.js
 ├── places.json
+│
+├── css/
+│   ├── style.css
+│   └── animations.css
+│
+├── js/
+│   ├── app.js
+│   ├── map.js
+│   ├── markers.js
+│   ├── filter.js
+│   ├── roulette.js
+│   ├── geolocation.js
+│   ├── alerts.js
+│   └── utils.js
 │
 ├── assets/
 │   ├── icons/
@@ -249,549 +240,384 @@ amdavadi-night-owl/
 │   └── images/
 │
 ├── README.md
-│
 └── LICENSE
 ```
-
-Project components:
-
-- **index.html** → Main application
-- **style.css** → Styling
-- **script.js** → Core functionality
-- **places.json** → Community-maintained location database
-- **assets/** → Images, icons, screenshots
 
 ---
 
 # ⚙ How It Works
 
-Unlike traditional web apps, **Amdavadi Night Owl** has **no backend server**.
+## Location Data
 
-Instead, it leverages GitHub's infrastructure to keep everything simple, scalable, and free.
+All locations are stored in:
 
-### 1️⃣ Places Database
-
-All map locations are stored inside:
-
-```text
+```
 places.json
 ```
 
-Whenever maintainers update this file, every user instantly receives the latest data through GitHub Pages.
+Each location contains information such as:
 
-### 2️⃣ Live Alerts
+* Name
+* Category
+* Description
+* Coordinates
+* Rating
+* Opening hours
+* Safety indicator
 
-Community members submit alerts using GitHub Issues.
+Example:
 
-When the website loads, JavaScript requests all open issues through the GitHub REST API.
+```json
+{
+  "name": "Manek Chowk",
+  "category": "food",
+  "rating": 4.8,
+  "open": "20:00",
+  "close": "03:00"
+}
+```
 
-If active alerts exist, they are automatically displayed as warning banners inside the application.
+---
 
-### 3️⃣ Add a Spot
+## Map Rendering
 
-Instead of storing submissions in a database, contributors can submit new locations directly through a pre-filled GitHub Issue.
+When the application loads:
 
-The submitted issue contains structured JSON that can be reviewed by maintainers before being added to `places.json`.
+```
+places.json
+      ↓
+map.js
+      ↓
+markers.js
+      ↓
+Leaflet markers
+      ↓
+Interactive map
+```
 
-This workflow keeps the project:
+---
 
-- ✅ Free
-- ✅ Transparent
-- ✅ Version controlled
-- ✅ Easy to maintain
-- ✅ Community driven
+## Community Updates
+
+The project uses GitHub as a lightweight collaboration platform.
+
+Users can:
+
+* Suggest new locations
+* Report issues
+* Share improvements
+
+Maintainers review updates before publishing changes.
 
 ---
 
 # 🚀 Getting Started
 
-## Prerequisites
+## Requirements
 
-All you need is:
+You need:
 
-- A modern web browser (Chrome, Edge, Firefox, Safari)
-- Git (optional, for development)
-- VS Code (recommended)
+* Modern browser
+* Git (optional)
+* VS Code recommended
 
 ---
 
 # 💻 Local Development
 
-## 1. Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/leolouis/amdavadi-night-owl.git
+
 cd amdavadi-night-owl
 ```
 
 ---
 
-## 2. Open the Project
+## Run Locally
 
-You can simply open:
+Because the project loads JSON files, use a local server.
 
-```text
-index.html
+Recommended:
+
+### VS Code Live Server
+
+1. Install Live Server extension
+2. Open the project
+3. Right-click `index.html`
+4. Select:
+
 ```
-
-in your browser.
-
-For the best experience (especially GPS and API requests), use a local development server.
-
-### VS Code
-
-Install the **Live Server** extension.
-
-Then:
-
-- Right-click `index.html`
-- Select **Open with Live Server**
-
----
-
-## 3. Start Exploring
-
-Once the page loads you can:
-
-- Browse nearby locations
-- Test GPS positioning
-- Spin Midnight Roulette
-- Report Alerts
-- Add New Spots
-- Share invitations
+Open with Live Server
+```
 
 ---
 
 # 📖 Usage Guide
 
-## 📍 Locate Me
+## Find Your Location
 
-Tap the **Locate Me** button.
+Press:
 
-The application requests your device's location and displays your current position relative to nearby spots.
+```
+📍 Locate Me
+```
 
----
-
-## 🚨 Report an Alert
-
-Found a temporary closure or traffic issue?
-
-1. Click **Report Alert**
-2. A GitHub Issue opens automatically
-3. Submit the issue
-4. Other users immediately benefit from your update
+Allow browser location permission.
 
 ---
 
-## ➕ Add a Spot
+## Discover A Place
 
-Know an amazing midnight food destination?
+Use:
 
-Click **Add Spot** and provide:
+```
+🎲 Midnight Roulette
+```
 
-- Name
-- Address
-- Coordinates
-- Category
-- Opening hours
-- Notes
-
-The app generates a formatted GitHub Issue for maintainers to review.
+to randomly discover a night spot.
 
 ---
 
-## 🎲 Midnight Roulette
+## Filter Locations
 
-Feeling adventurous?
+Select:
 
-Click **Midnight Roulette** and let the app randomly choose your next destination.
+```
+🍵 Tea
+🍔 Food
+☕ Cafe
+🍨 Dessert
+```
 
-The selected marker is highlighted automatically on the map.
+to explore specific categories.
 
 ---
 
-## 💬 Invite the Gang
+## Submit A Location
 
-Generate a ready-to-send WhatsApp invitation containing:
+Use:
 
-- Spot name
-- Map link
-- Friendly message
+```
+➕ Add Spot
+```
 
-Perfect for spontaneous midnight plans.
+to suggest a new place.
 
 ---
 
 # 🤝 Contributing
 
-Community contributions are what make this project useful.
+Community contributions help make the map better.
 
-Whether you discover a new tea kitli or notice an existing location has changed, your help keeps the map accurate.
+You can contribute by:
 
----
-
-## Ways to Contribute
-
-- Add a new location
-- Report incorrect information
-- Improve documentation
-- Suggest features
-- Fix bugs
-- Improve accessibility
-- Improve UI
-- Optimize performance
-
-Every contribution matters.
+* Adding new locations
+* Fixing incorrect information
+* Reporting bugs
+* Improving UI
+* Suggesting features
+* Improving documentation
 
 ---
 
 ## Contribution Workflow
 
-```text
+```
 Fork Repository
-        │
-        ▼
-Create Feature Branch
-        │
-        ▼
+        ↓
+Create Branch
+        ↓
 Make Changes
-        │
-        ▼
-Commit Changes
-        │
-        ▼
-Push Branch
-        │
-        ▼
+        ↓
+Commit
+        ↓
+Push
+        ↓
 Open Pull Request
-        │
-        ▼
-Code Review
-        │
-        ▼
-Merged 🎉
+        ↓
+Review
+        ↓
+Merge
 ```
 
 ---
 
-## Reporting Bugs
-
-Please include:
-
-- Browser
-- Device
-- Steps to reproduce
-- Expected behavior
-- Actual behavior
-- Screenshots (if applicable)
-
-This helps maintainers resolve issues faster.
-
----
-
-## Feature Requests
-
-Feature requests are welcome.
-
-Before opening a new issue:
-
-- Search existing issues
-- Explain the problem
-- Describe your proposed solution
-- Include mockups if available
-
----
-
-# 🧹 Coding Standards
-
-Please follow these conventions.
-
-## HTML
-
-- Semantic elements
-- Accessible markup
-- Proper indentation
-
----
-
-## CSS
-
-- Mobile-first
-- Utility classes where possible
-- Consistent spacing
-
----
+# 🧹 Coding Guidelines
 
 ## JavaScript
 
-- ES6+
-- Meaningful variable names
-- Modular functions
-- Avoid global variables
-- Comment complex logic
+* Use ES6 modules
+* Keep functions focused
+* Use meaningful names
+* Avoid unnecessary globals
+
+## CSS
+
+* Maintain responsive layouts
+* Keep styles organised
+* Follow consistent spacing
+
+## HTML
+
+* Use semantic elements
+* Maintain accessibility
 
 ---
 
 # 📱 Mobile Experience
 
-Amdavadi Night Owl is designed primarily for phones.
+The application is designed primarily for mobile users.
 
-Optimized for:
+Optimised for:
 
-- 📍 GPS navigation
-- ☕ Walking between food spots
-- 🌙 Night-time visibility
-- 👆 Touch interactions
-- 📲 Responsive layouts
+* GPS usage
+* Touch controls
+* Night exploration
+* Quick discovery
 
 ---
 
 # ⚡ Performance
 
-Designed to load quickly even on slower connections.
+The project focuses on simplicity and speed.
 
-Current optimizations include:
+Current optimisations:
 
-- Static hosting
-- No backend server
-- Lightweight Leaflet map
-- Optimized assets
-- Vanilla JavaScript
-- Minimal dependencies
+* Static hosting
+* Lightweight dependencies
+* JSON-based data
+* Vanilla JavaScript
+* No backend overhead
 
-Future improvements include:
+Future improvements:
 
-- Lazy loading
-- Image optimization
-- Offline caching
-- Progressive Web App support
+* Marker clustering
+* Progressive Web App support
+* Offline caching
 
 ---
 
-# 🔒 Security
+# 🔒 Privacy
 
-This project intentionally avoids collecting personal data.
+Amdavadi Night Owl does not collect personal information.
 
-- No login system
-- No user database
-- No cookies
-- No tracking
-- No analytics by default
+The project does not use:
 
-User-submitted content is reviewed before being added to the map.
+* User accounts
+* Personal databases
+* Tracking cookies
 
-This helps maintain data quality while reducing abuse.
+Location access is used only inside your browser for map features.
 
 ---
 
-# ❤️ Community Philosophy
-
-This project is built around a simple idea:
-
-> Great communities build great maps.
-
-Every tea stall, food truck, and late-night hangout exists because people share local knowledge.
-
-Amdavadi Night Owl simply gives that knowledge a home.
-
----
 # 🛣 Roadmap
 
-The journey has just begun! Here are some exciting features planned for future releases.
+## Near Future
 
-## 🚀 Upcoming Features
+* [ ] Improved search
+* [ ] Better category filtering
+* [ ] Open now detection
+* [ ] Favourite locations
+* [ ] Marker clustering
+* [ ] Progressive Web App support
 
-- [ ] User voting for favorite spots
-- [ ] Heatmap of popular late-night locations
-- [ ] Advanced search & filtering
-- [ ] Category filters (Tea, Food, Cafés, Desserts, etc.)
-- [ ] Open/Closed prediction improvements
-- [ ] Photo uploads
-- [ ] Community ratings & reviews
-- [ ] Verified locations
-- [ ] Progressive Web App (PWA)
-- [ ] Offline support
-- [ ] Push notifications for live alerts
-- [ ] Multi-language support (English & Gujarati)
-- [ ] Route navigation integration
-- [ ] Nearby recommendations
-- [ ] QR code sharing
-- [ ] Seasonal event markers
-- [ ] User achievements & contributor badges
-- [ ] AI-powered recommendations
+## Future Ideas
 
-Have an idea?
-
-Open a Feature Request—we'd love to hear it!
+* [ ] Community ratings
+* [ ] Photo uploads
+* [ ] Multi-language support
+* [ ] Smart recommendations
+* [ ] Offline mode
 
 ---
 
-# ❓ Frequently Asked Questions
+# ❓ FAQ
 
-## Is this project really serverless?
+## Is this project serverless?
 
 Yes.
 
-There is **no backend server**, **no database**, and **no hosting costs** beyond GitHub Pages.
+The application uses:
 
-The application relies on:
+* Static files
+* GitHub Pages
+* JSON data
+* GitHub Issues
 
-- Static assets
-- `places.json`
-- GitHub REST API
-- GitHub Issues
-
----
-
-## How are new locations added?
-
-Contributors submit a GitHub Issue through the **Add Spot** feature.
-
-Maintainers verify the information and merge it into `places.json`.
+No traditional backend server is required.
 
 ---
 
-## Why not use Firebase or Supabase?
+## How are locations added?
 
-The goal of this project is to demonstrate that many community-driven applications can be built without traditional backend infrastructure.
-
-This keeps the project:
-
-- Free
-- Simple
-- Open
-- Easy to fork
-- Easy to maintain
+Locations are submitted through GitHub Issues and reviewed before being added.
 
 ---
 
-## Can I contribute if I'm not a developer?
-
-Absolutely!
-
-You can help by:
-
-- Reporting incorrect locations
-- Suggesting new food spots
-- Sharing ideas
-- Reporting bugs
-- Improving documentation
-
----
-
-## Does GPS data get stored?
+## Does the app store my location?
 
 No.
 
-Your location is only used locally by your browser to improve the map experience and is never stored by the application.
-
----
-
-## Which browsers are supported?
-
-- Google Chrome
-- Microsoft Edge
-- Mozilla Firefox
-- Safari
-- Brave
-- Most Chromium-based browsers
+Your location is only used locally by your browser.
 
 ---
 
 # 🙌 Acknowledgements
 
-Special thanks to the amazing open-source projects that make this application possible.
+Built using amazing open-source technologies:
 
-- **Leaflet.js** — Interactive maps
-- **OpenStreetMap** — Geographic data
-- **CARTO** — Dark Matter map tiles
-- **Tailwind CSS** — Utility-first styling
-- **Canvas Confetti** — Celebration animations
-- **Google Fonts** — Space Grotesk typography
-- **GitHub Pages** — Free static hosting
-- **GitHub REST API** — Community-powered backend
-
-Open source thrives because of communities like these.
-
-Thank you ❤️
+* Leaflet.js
+* OpenStreetMap
+* GitHub Pages
+* GitHub REST API
+* Canvas Confetti
+* Google Fonts
 
 ---
 
-# 🌟 Show Your Support
+# 🌟 Support The Project
 
-If you enjoy this project, consider giving it a ⭐ on GitHub.
+If you like Amdavadi Night Owl:
 
-It helps others discover the project and motivates future development.
-
----
-
-# 💡 Ideas & Suggestions
-
-Have an idea to make Amdavadi Night Owl even better?
-
-Open an issue or submit a pull request.
-
-Every contribution—big or small—is appreciated.
+⭐ Star the repository
+🐛 Report issues
+💡 Suggest improvements
+📍 Add new locations
 
 ---
 
 # 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
 You are free to:
 
-- Use
-- Modify
-- Fork
-- Distribute
+* Use
+* Modify
+* Fork
+* Distribute
 
-Please see the `LICENSE` file for full details.
+See the `LICENSE` file for details.
 
 ---
 
 # 👨‍💻 Author
 
-Made with 🩸, ☕, and countless midnight coding sessions by **Leo Louis**.
+Made with ☕ and countless midnight coding sessions by **Leo Louis**.
 
-Built for the late-night explorers of Ahmedabad.
-
----
-
-# ❤️ Contributing
-
-If this project helped you discover your new favorite midnight spot, consider contributing back.
-
-Whether it's:
-
-- Fixing a typo
-- Adding a new kitli
-- Improving the UI
-- Reporting an issue
-- Suggesting a feature
-
-Every contribution helps the community.
-
----
-
-# ⭐ Star History
-
-If you like this project, don't forget to leave a ⭐ on GitHub!
-
-Your support encourages continued development and helps more people discover the project.
+Built for Ahmedabad's night explorers.
 
 ---
 
 <div align="center">
 
-## 🌙 See You After Midnight.
+## 🌙 See You After Midnight
 
-**Made for the Night Owls of Ahmedabad.**
+**Explore • Discover • Share**
 
-☕ Explore • Discover • Share • Repeat
-
----
-
-### Happy Exploring! 🦉
+🦉
 
 </div>
