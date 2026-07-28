@@ -3,6 +3,7 @@ import { createSpotMarker } from "./markers.js";
 let allPlaces = [];
 let currentCategory = "all";
 let searchQuery = "";
+let activeMarkers = [];
 
 export async function initFilters(map, placesData) {
     allPlaces = placesData;
@@ -10,15 +11,13 @@ export async function initFilters(map, placesData) {
     const searchInput = document.getElementById("search-input");
     const categoryButtons = document.querySelectorAll(".category");
 
-    // Search input listener
     searchInput.addEventListener("input", e => {
         searchQuery = e.target.value.toLowerCase();
         renderFilteredPlaces(map);
     });
 
-    // Category buttons listener
     categoryButtons.forEach(btn => {
-        btn.addEventListener("click", e => {
+        btn.addEventListener("click", () => {
             categoryButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentCategory = btn.dataset.category || "all";
@@ -28,14 +27,18 @@ export async function initFilters(map, placesData) {
 }
 
 function renderFilteredPlaces(map) {
-    // Clear existing markers if you store them in an array
-    // Then filter:
+    // Remove existing markers
+    activeMarkers.forEach(m => map.removeLayer(m));
+    activeMarkers = [];
+
     const filtered = allPlaces.filter(place => {
         const matchesCategory = currentCategory === "all" || place.category.toLowerCase() === currentCategory;
         const matchesSearch = place.name.toLowerCase().includes(searchQuery) || place.description.toLowerCase().includes(searchQuery);
         return matchesCategory && matchesSearch;
     });
 
-    // Re-render markers on map for filtered results
-    filtered.forEach(place => createSpotMarker(map, place));
+    filtered.forEach(place => {
+        const marker = createSpotMarker(map, place);
+        activeMarkers.push(marker);
+    });
 }
