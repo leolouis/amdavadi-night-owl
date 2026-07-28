@@ -19,13 +19,14 @@ export async function initMap() {
 
 
     L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
             attribution:
-            "&copy; OpenStreetMap & CARTO"
+            "&copy; OpenStreetMap contributors",
+
+            maxZoom:19
         }
-    )
-    .addTo(nightMap);
+    ).addTo(nightMap);
 
 
 
@@ -52,21 +53,23 @@ async function loadPlaces() {
     try {
 
 
-        const response = await fetch("./places.json");
+        const response =
+            await fetch("./places.json");
 
 
 
-        if (!response.ok) {
+        if(!response.ok){
 
             throw new Error(
-                "places.json not found"
+                `places.json error: ${response.status}`
             );
 
         }
 
 
 
-        const places = await response.json();
+        const places =
+            await response.json();
 
 
 
@@ -74,6 +77,10 @@ async function loadPlaces() {
             "Loaded locations:",
             places.length
         );
+
+
+
+        const bounds = [];
 
 
 
@@ -86,13 +93,35 @@ async function loadPlaces() {
             );
 
 
+
+            bounds.push([
+                place.lat,
+                place.lng
+            ]);
+
+
         });
+
+
+
+        // Automatically show all locations
+
+        if(bounds.length > 0){
+
+            nightMap.fitBounds(
+                bounds,
+                {
+                    padding:[50,50]
+                }
+            );
+
+        }
 
 
 
     }
 
-    catch(error) {
+    catch(error){
 
 
         console.error(
