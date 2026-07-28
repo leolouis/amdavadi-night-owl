@@ -4,7 +4,6 @@ import { createSpotMarker } from "./markers.js";
 export let nightMap;
 
 
-
 export async function initMap() {
 
 
@@ -17,20 +16,20 @@ export async function initMap() {
     );
 
 
-
     L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
             attribution:
             "&copy; OpenStreetMap contributors",
 
-            maxZoom:19
+            maxZoom: 19
         }
-    ).addTo(nightMap);
+    )
+    .addTo(nightMap);
 
 
 
-    await loadPlaces();
+    const markers = await loadPlaces();
 
 
 
@@ -40,6 +39,9 @@ export async function initMap() {
 
     }, 500);
 
+
+
+    return markers;
 
 }
 
@@ -54,7 +56,7 @@ async function loadPlaces() {
 
 
         const response =
-            await fetch("./places.json");
+        await fetch("./places.json");
 
 
 
@@ -69,7 +71,7 @@ async function loadPlaces() {
 
 
         const places =
-            await response.json();
+        await response.json();
 
 
 
@@ -82,41 +84,58 @@ async function loadPlaces() {
 
         const bounds = [];
 
-
-
         window.allPlaces = places;
-        places.forEach(place => {
-            createSpotMarker(
-                nightMap,
-                place
-            );
-        });
 
+
+
+        const markers =
+        places.map(place => {
 
 
             bounds.push([
+
                 place.lat,
+
                 place.lng
+
             ]);
+
+
+
+            return createSpotMarker(
+
+                nightMap,
+
+                place
+
+            );
 
 
         });
 
 
 
-        // Automatically show all locations
-
         if(bounds.length > 0){
 
+
             nightMap.fitBounds(
+
                 bounds,
+
                 {
+
                     padding:[50,50]
+
                 }
+
             );
+
 
         }
 
+
+
+        return markers;
 
 
     }
@@ -125,9 +144,15 @@ async function loadPlaces() {
 
 
         console.error(
+
             "Map loading error:",
+
             error
+
         );
+
+
+        return [];
 
 
     }
