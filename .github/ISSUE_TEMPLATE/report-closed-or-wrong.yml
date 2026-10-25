@@ -1,0 +1,22 @@
+name: "🔄 Report closed or wrong info"
+description: A place closed, moved, or has wrong hours
+title: "[Update] "
+labels: ["closed-or-wrong"]
+body:
+  - type: input
+    id: place
+    attributes:
+      label: Place name
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong?
+      options: [Permanently closed, Hours are wrong, Wrong location, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
