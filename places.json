@@ -864,18 +864,6 @@
     "safe":true
   },
   {
-    "id":73,
-    "name":"Bodakdev Night Cafe Area",
-    "category":"cafe",
-    "description":"Premium cafes and restaurants.",
-    "lat":23.0320,
-    "lng":72.5230,
-    "rating":4.5,
-    "open":"18:00",
-    "close":"02:00",
-    "safe":true
-  },
-  {
     "id":74,
     "name":"Prahladnagar Cross Road",
     "category":"food",
@@ -900,18 +888,6 @@
     "safe":true
   },
   {
-    "id":76,
-    "name":"Vijay Cross Road Cafe Street",
-    "category":"cafe",
-    "description":"Student-friendly cafes and food spots.",
-    "lat":23.0390,
-    "lng":72.5480,
-    "rating":4.4,
-    "open":"17:00",
-    "close":"02:00",
-    "safe":true
-  },
-  {
     "id":77,
     "name":"Gurukul Ice Cream Zone",
     "category":"dessert",
@@ -933,18 +909,6 @@
     "rating":4.3,
     "open":"10:00",
     "close":"23:30",
-    "safe":true
-  },
-  {
-    "id":79,
-    "name":"Ellis Bridge Cafe Area",
-    "category":"cafe",
-    "description":"Central cafe and restaurant zone.",
-    "lat":23.0260,
-    "lng":72.5710,
-    "rating":4.3,
-    "open":"18:00",
-    "close":"01:00",
     "safe":true
   },
   {
