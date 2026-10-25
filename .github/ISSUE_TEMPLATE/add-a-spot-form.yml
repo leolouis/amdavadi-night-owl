@@ -1,0 +1,60 @@
+name: "📍 Add a night spot"
+description: Suggest a late-night place in Ahmedabad
+title: "[New spot] "
+labels: ["new-spot"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping Ahmedabad's night owls! Please add only places you have visited or know well.
+  - type: input
+    id: name
+    attributes:
+      label: Place name
+      placeholder: "e.g. Raju Tea Stall, Law Garden"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Tea, Food, Cafe, Dessert, Other]
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Google Maps link or coordinates
+      description: "Long-press the spot in Google Maps and copy the coordinates, or paste the share link."
+    validations:
+      required: true
+  - type: input
+    id: hours
+    attributes:
+      label: Opening hours
+      placeholder: "e.g. 8 PM – 3 AM"
+  - type: dropdown
+    id: diet
+    attributes:
+      label: Food type
+      options: [Pure veg, Jain options available, Veg and non-veg, Non-veg]
+  - type: input
+    id: must_try
+    attributes:
+      label: Must-try item
+      placeholder: "e.g. Masala chai, dabeli"
+  - type: input
+    id: price
+    attributes:
+      label: Approx. price per person (₹)
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your connection
+      options: [Customer, Owner or staff]
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: I know this place is real and open at night
+          required: true
